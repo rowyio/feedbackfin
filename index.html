@@ -1,0 +1,32 @@
+<body>
+  <form method="post">
+    <fieldset>
+      <legend>Send feedback</legend>
+
+      <input
+        type="radio"
+        id="type-1"
+        name="type"
+        value="issue"
+        checked
+        required
+      />
+      <label for="type-1">Issue</label>
+
+      <input type="radio" id="type-2" name="type" value="idea" required />
+      <label for="type-2">Idea</label>
+
+      <input type="radio" id="type-3" name="type" value="other" required />
+      <label for="type-3">Other</label>
+    </fieldset>
+
+    <textarea
+      name="message"
+      type="text"
+      placeholder="I would like to see…"
+      required
+    ></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
