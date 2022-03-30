@@ -13,6 +13,8 @@ const config: FeedbackFinConfig = {
   url: "",
   user: {},
   disableErrorAlert: false,
+  // Spread user config when loaded
+  ...(window as any).feedbackfin?.config,
 };
 
 function init() {
