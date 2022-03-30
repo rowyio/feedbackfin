@@ -43,36 +43,45 @@
       <input
         class="feedbackfin__radio"
         type="radio"
-        id="type-1"
-        name="type"
+        id="feedback-type__issue"
+        name="feedbackType"
         value="issue"
         required
       />
-      <label for="type-1" class="feedbackfin__button feedbackfin__radio-label">
+      <label
+        for="feedback-type__issue"
+        class="feedbackfin__button feedbackfin__radio-label"
+      >
         <span class="feedbackfin__radio-icon">❗️</span> Issue
       </label>
 
       <input
         class="feedbackfin__radio"
         type="radio"
-        id="type-2"
-        name="type"
+        id="feedback-type__idea"
+        name="feedbackType"
         value="idea"
         required
       />
-      <label for="type-2" class="feedbackfin__button feedbackfin__radio-label">
+      <label
+        for="feedback-type__idea"
+        class="feedbackfin__button feedbackfin__radio-label"
+      >
         <span class="feedbackfin__radio-icon">💡</span> Idea
       </label>
 
       <input
         class="feedbackfin__radio"
         type="radio"
-        id="type-3"
-        name="type"
+        id="feedback-type__other"
+        name="feedbackType"
         value="other"
         required
       />
-      <label for="type-3" class="feedbackfin__button feedbackfin__radio-label">
+      <label
+        for="feedback-type__other"
+        class="feedbackfin__button feedbackfin__radio-label"
+      >
         <span class="feedbackfin__radio-icon">💭</span> Other
       </label>
     </div>
@@ -105,7 +114,10 @@
   </form>
 
   <script>
-    window.feedbackfin = {};
+    window.feedbackfin = {
+      url: "",
+      user: {},
+    };
 
     const handleTypeChange = (e) => {
       document
@@ -146,12 +158,30 @@
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      console.log({
+
+      if (!window.feedbackfin.url)
+        console.error("Feedback Fin: No URL provided");
+
+      const myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      const data = {
         ...window.feedbackfin.user,
-        type: e.target.elements.type.value,
+        feedbackType: e.target.elements.feedbackType.value,
         message: e.target.elements.message.value,
         timestamp: Date.now(),
+      };
+
+      fetch(window.feedbackfin.url, {
+        method: "POST",
+        headers: myHeaders,
+        body: JSON.stringify(data),
+      }).catch((e) => {
+        console.error("Feedback Fin:", e);
+        if (!window.feedbackfin.disableErrorAlert)
+          alert(`Could not send feedback: ${e.message}`);
       });
+
       return false;
     };
     document

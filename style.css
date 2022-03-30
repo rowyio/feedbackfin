@@ -15,7 +15,7 @@
     opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
   --feedbackfin-icon-button-opacity: 0.38;
 
-  --feedbackfin-primary-color: #07f;
+  --feedbackfin-primary-color: #6a35ff;
   --feedbackfin-primary-color-text: #fff;
 
   --feedbackfin-outline-opacity: 0.12;
@@ -37,6 +37,8 @@
     --feedbackfin-icon-button-opacity: 0.5;
 
     --feedbackfin-outline-opacity: 0.2;
+    --feedbackfin-focus-shadow: 0 0 0 2px var(--feedbackfin-bg-color),
+      0 0 0 4px var(--feedbackfin-focus-color);
   }
 }
 [data-theme*="dark"] {
@@ -51,6 +53,8 @@
   --feedbackfin-icon-button-opacity: 0.5;
 
   --feedbackfin-outline-opacity: 0.2;
+  --feedbackfin-focus-shadow: 0 0 0 2px var(--feedbackfin-bg-color),
+    0 0 0 4px var(--feedbackfin-focus-color);
 }
 
 #feedbackfin__form {
