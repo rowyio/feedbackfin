@@ -20,7 +20,8 @@
   ],
   "scripts": {
     "build": "microbundle --define process.env.NODE_ENV=production",
-    "dev": "microbundle watch --define process.env.NODE_ENV=production"
+    "dev": "microbundle watch --define process.env.NODE_ENV=production",
+    "prepare": "microbundle --define process.env.NODE_ENV=production"
   },
   "devDependencies": {
     "@floating-ui/dom": "^0.4.2",
