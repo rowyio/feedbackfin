@@ -1,0 +1,38 @@
+<head>
+  <style>
+    :root {
+      /* --feedbackfin-primary-color: #007aff; */
+      /* --feedbackfin-primary-color-text: #fff; */
+    }
+
+    body {
+      font-family: system-ui;
+      display: grid;
+      place-items: flex-end;
+      height: 200vh;
+    }
+  </style>
+</head>
+
+<body>
+  <button onclick="toggleTheme()" style="position: fixed; top: 8px; left: 8px">
+    Toggle theme
+  </button>
+  <button data-feedbackfin-button>Feedback</button>
+
+  <script src="./dist/index.umd.js"></script>
+  <script>
+    // import "./dist/index.modern.js";
+
+    function toggleTheme() {
+      document.body.setAttribute(
+        "data-theme",
+        document.body.getAttribute("data-theme") === "dark" ? "light" : "dark"
+      );
+    }
+
+    // document
+    //   .querySelector("button")
+    //   .addEventListener("click", feedbackfin.open);
+  </script>
+</body>

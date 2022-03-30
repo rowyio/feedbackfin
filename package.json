@@ -1,0 +1,27 @@
+{
+  "name": "feedbackfin",
+  "version": "0.1.0",
+  "homepage": "https://feedbackfin.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rowyio/feedbackfin.git"
+  },
+  "type": "module",
+  "source": "src/index.ts",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.modern.js"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.module.js",
+  "unpkg": "./dist/index.umd.js",
+  "scripts": {
+    "build": "microbundle --define process.env.NODE_ENV=production",
+    "dev": "microbundle watch --define process.env.NODE_ENV=production"
+  },
+  "devDependencies": {
+    "@floating-ui/dom": "^0.4.2",
+    "focus-trap": "^6.7.3",
+    "microbundle": "^0.14.2"
+  }
+}
