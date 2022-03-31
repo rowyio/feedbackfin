@@ -94,7 +94,7 @@ respects your page’s `font-family`. Styles are attached just before the openin
 
 You can customize the widget’s appearance by:
 
-- overriding
+- Overriding
   [the CSS variables](https://github.com/rowyio/feedbackfin/blob/main/src/form.css).
 
   For example, you can change the primary button color using:
@@ -106,7 +106,7 @@ You can customize the widget’s appearance by:
   }
   ```
 
-- overriding
+- Overriding
   [the CSS rules](https://github.com/rowyio/feedbackfin/blob/main/src/form.css).
   Class names are prefixed with `feedbackfin__`.
 
