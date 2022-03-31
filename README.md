@@ -1,7 +1,15 @@
 # Feedback Fin
 
-A tiny widget to collect feedback anywhere on your website. That’s it.
+<h4>A tiny widget to collect feedback anywhere on your website. That’s it.</h4>
 
+<p>
+    <a href="http://www.feedbackfin.com"><b>Website</b></a> •
+    <a href="https://discord.gg/fjBugmvzZP"><b>Discord</b></a> • 
+    <a href="https://twitter.com/rowyio"><b>Twitter</b></a>
+</p>
+
+<div>
+  
 [![npm version](https://badgen.net/npm/v/feedbackfin)](https://www.npmjs.com/package/feedbackfin)
 [![Package size](https://badgen.net/bundlephobia/minzip/feedbackfin)](https://bundlephobia.com/result?p=feedbackfin)
 
@@ -10,6 +18,8 @@ A tiny widget to collect feedback anywhere on your website. That’s it.
 </a>
 
 [Try the widget&nbsp;&UpperRightArrow;](https://feedbackfin.com)
+  
+</div>
 
 ## Quick Start
 
@@ -19,7 +29,7 @@ A tiny widget to collect feedback anywhere on your website. That’s it.
    <script src="https://unpkg.com/feedbackfin@^1" defer></script>
    ```
 
-2. Configure with a webhook URL and user info:
+2. Configure with a [webhook URL](https://github.com/rowyio/feedbackfin/edit/main/README.md#setting-up-webhook-url) and optionally, add [user info](https://github.com/rowyio/feedbackfin/edit/main/README.md#user):
 
    ```html
    <script>
@@ -33,23 +43,21 @@ A tiny widget to collect feedback anywhere on your website. That’s it.
    ```html
    <button data-feedbackfin-button>Feedback</button>
    ```
+   
+## Setting up webhook URL
+
+This is the URL to send the feedback to. The widget will make a POST request to this URL
+with the feedback data as a JSON body.
+
+You can generate a webhook URL endpoint and view the responses in a spreadsheet-UI using Rowy. [Learn how &nbsp;&UpperRightArrow;](https://feedbackfin.com/setup)
 
 ## Options
 
 Options are set in the `window.feedbackfin.config` object:
 
-### `url`
-
-The URL to send the feedback to. The widget will make a POST request to this URL
-with the data as a JSON body.
-
-You can connect it directly to your database using [Rowy](https://rowy.io).  
-[Learn how&nbsp;&UpperRightArrow;](https://feedbackfin.com/setup)
-
 ### `user`
 
-An object whose contents will be submitted as part of the form. Note the
-`feedbackType`, `message`, and `timestamp` fields will be overwritten.
+An object whose contents will be submitted as part of the form. Note: `feedbackType`, `message`, and `timestamp` are reserverd fields and will be overwritten by form values.
 
 Typically:
 
@@ -64,7 +72,7 @@ window.feedbackfin.config.user = {
 
 Optionally, disables displaying
 [alerts](https://developer.mozilla.org/en-US/docs/Web/API/Window/alert) if no
-URL is set or the request fails. Default: `false`
+URL is set or the request fails. Default: `disableErrorAlert: false`
 
 ## How it works
 
@@ -136,8 +144,7 @@ Dark mode colors are set using CSS variables. You can override them with:
 
 ## Accessibility
 
-This widget is built using standard HTML form elements with the appropriate
-labels.
+This widget is built using standard HTML form elements with the appropriate labels.
 
 Focus is trapped within the widget when it is open using
 [focus-trap](https://github.com/focus-trap/focus-trap).
@@ -146,3 +153,8 @@ Focus is trapped within the widget when it is open using
 
 Contribute to Feedback Fin with issues and pull requests in
 [the GitHub repo](https://github.com/rowyio/feedbackfin).
+
+## Support
+
+- Join a community of developers on [Discord](https://discord.gg/fjBugmvzZP)
+- Follow us on [Twitter](https://twitter.com/rowyio) and help [spread the word](https://twitter.com/intent/tweet?text=Came%20across%20this%20cute,%20tiny%20widget%20to%20collect%20feedback%20anywhere%20on%20your%20website.%0a%0aOpen-source,%20free,%20and%20fully%20customizable.%0a%0ahttp://www.feedbackfin.com/) 🙏
