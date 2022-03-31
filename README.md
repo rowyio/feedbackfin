@@ -65,7 +65,7 @@ above.
 ### `user`
 
 An object whose contents will be submitted as part of the form. Note:
-`feedbackType`, `message`, and `timestamp` are reserverd fields and will be
+`feedbackType`, `message`, and `timestamp` are reserved fields and will be
 overwritten by form values.
 
 Typically:
