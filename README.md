@@ -4,7 +4,6 @@ A tiny widget to collect feedback anywhere on your website. That’s it.
 
 [![npm version](https://badgen.net/npm/v/feedbackfin)](https://www.npmjs.com/package/feedbackfin)
 [![Package size](https://badgen.net/bundlephobia/minzip/feedbackfin)](https://bundlephobia.com/result?p=feedbackfin)
-[![License](https://badgen.net/npm/license/feedbackfin)](https://github.com/rowyio/feedbackfin/blob/main/LICENSE)
 
 <a href="https://feedbackfin.com" target="_blank" rel="noopener">
   <img src="https://user-images.githubusercontent.com/27017118/160980505-edf2c161-730d-4ba1-9ae2-2a0a01454954.gif" width="420" height="380" alt="Demo GIF" />
@@ -45,7 +44,7 @@ The URL to send the feedback to. The widget will make a POST request to this URL
 with the data as a JSON body.
 
 You can connect it directly to your database using [Rowy](https://rowy.io).  
-[Learn how&nbsp;&UpperRightArrow;](https://docs.rowy.io/webhooks)
+[Learn how&nbsp;&UpperRightArrow;](https://feedbackfin.com/setup)
 
 ### `user`
 
@@ -67,7 +66,7 @@ Optionally, disables displaying
 [alerts](https://developer.mozilla.org/en-US/docs/Web/API/Window/alert) if no
 URL is set or the request fails. Default: `false`
 
-## Usage
+## How it works
 
 When the script is loaded, it looks for any elements with the
 `data-feedbackfin-button` attribute and opens the widget when any of those
