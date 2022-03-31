@@ -6,7 +6,9 @@ A tiny widget to collect feedback anywhere on your website. That’s it.
 [![Package size](https://badgen.net/bundlephobia/minzip/feedbackfin)](https://bundlephobia.com/result?p=feedbackfin)
 [![License](https://badgen.net/npm/license/feedbackfin)](https://github.com/rowyio/feedbackfin/blob/main/LICENSE)
 
-![Demo GIF](./demo.gif)
+<a href="https://feedbackfin.com" target="_blank" rel="noopener">
+  <img src="https://user-images.githubusercontent.com/27017118/160980505-edf2c161-730d-4ba1-9ae2-2a0a01454954.gif" width="420" height="380" alt="Demo GIF" />
+</a>
 
 [Try the widget&nbsp;&UpperRightArrow;](https://feedbackfin.com)
 
