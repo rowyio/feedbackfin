@@ -32,7 +32,6 @@ window.addEventListener("load", init);
 
 const containerElement = document.createElement("div");
 containerElement.id = "feedbackfin__container";
-containerElement.innerHTML = formHTML;
 
 const trap = createFocusTrap(containerElement, {
   initialFocus: "#feedbackfin__radio--issue",
@@ -41,6 +40,7 @@ const trap = createFocusTrap(containerElement, {
 
 function open(e: Event) {
   document.body.appendChild(containerElement);
+  containerElement.innerHTML = formHTML;
   containerElement.style.display = "block";
 
   const target = (e?.target as HTMLElement) || document.body;
@@ -75,13 +75,7 @@ function open(e: Event) {
 function close() {
   trap.deactivate();
 
-  document
-    .getElementById("feedbackfin__message")
-    ?.setAttribute("placeholder", "I’d like to see…");
-
-  const submitElement = document.getElementById("feedbackfin__submit")!;
-  submitElement.removeAttribute("disabled");
-  submitElement.innerHTML = "Send";
+  containerElement.innerHTML = "";
 
   containerElement.remove();
   containerElement.removeAttribute("data-feedback-type");
