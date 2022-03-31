@@ -1,15 +1,13 @@
 # Feedback Fin
 
-<h4>A tiny widget to collect feedback anywhere on your website. That’s it.</h4>
+**A tiny widget to collect feedback anywhere on your website. That’s it.**
 
 <p>
-    <a href="http://www.feedbackfin.com"><b>Website</b></a> •
-    <a href="https://discord.gg/fjBugmvzZP"><b>Discord</b></a> • 
-    <a href="https://twitter.com/rowyio"><b>Twitter</b></a>
+    <a target="_blank" rel="noopener" href="http://www.feedbackfin.com"><b>Website</b></a> •
+    <a target="_blank" rel="noopener" href="https://discord.gg/fjBugmvzZP"><b>Discord</b></a> • 
+    <a target="_blank" rel="noopener" href="https://twitter.com/rowyio"><b>Twitter</b></a>
 </p>
 
-<div>
-  
 [![npm version](https://badgen.net/npm/v/feedbackfin)](https://www.npmjs.com/package/feedbackfin)
 [![Package size](https://badgen.net/bundlephobia/minzip/feedbackfin)](https://bundlephobia.com/result?p=feedbackfin)
 
@@ -18,8 +16,6 @@
 </a>
 
 [Try the widget&nbsp;&UpperRightArrow;](https://feedbackfin.com)
-  
-</div>
 
 ## Quick Start
 
@@ -29,7 +25,10 @@
    <script src="https://unpkg.com/feedbackfin@^1" defer></script>
    ```
 
-2. Configure with a [webhook URL](https://github.com/rowyio/feedbackfin/edit/main/README.md#setting-up-webhook-url) and optionally, add [user info](https://github.com/rowyio/feedbackfin/edit/main/README.md#user):
+2. Configure with a
+   [webhook URL](https://github.com/rowyio/feedbackfin/edit/main/README.md#setting-up-a-webhook-url)
+   and optionally, add
+   [user info](https://github.com/rowyio/feedbackfin/edit/main/README.md#user):
 
    ```html
    <script>
@@ -43,21 +42,31 @@
    ```html
    <button data-feedbackfin-button>Feedback</button>
    ```
-   
-## Setting up webhook URL
 
-This is the URL to send the feedback to. The widget will make a POST request to this URL
-with the feedback data as a JSON body.
+## Setting up a webhook URL
 
-Generate a webhook URL and view the feedback in a spreadsheet-UI using Rowy. [Learn how &nbsp;&UpperRightArrow;](https://feedbackfin.com/setup)
+This is the URL to send the feedback to. The widget will make a POST request to
+this URL with the feedback data as a JSON body.
+
+Generate a webhook URL and view the feedback in a spreadsheet-UI using Rowy.
+[Learn how &nbsp;&UpperRightArrow;](https://feedbackfin.com/setup)
 
 ## Options
 
 Options are set in the `window.feedbackfin.config` object:
 
+### `url`
+
+The URL to send the feedback to. The widget will make a POST request to this URL
+with the data as a JSON body. See
+[Setting up a webhook URL](https://github.com/rowyio/feedbackfin/edit/main/README.md#setting-up-a-webhook-url)
+above.
+
 ### `user`
 
-An object whose contents will be submitted as part of the form. Note: `feedbackType`, `message`, and `timestamp` are reserverd fields and will be overwritten by form values.
+An object whose contents will be submitted as part of the form. Note:
+`feedbackType`, `message`, and `timestamp` are reserverd fields and will be
+overwritten by form values.
 
 Typically:
 
@@ -144,7 +153,8 @@ Dark mode colors are set using CSS variables. You can override them with:
 
 ## Accessibility
 
-This widget is built using standard HTML form elements with the appropriate labels.
+This widget is built using standard HTML form elements with the appropriate
+labels.
 
 Focus is trapped within the widget when it is open using
 [focus-trap](https://github.com/focus-trap/focus-trap).
@@ -157,4 +167,6 @@ Contribute to Feedback Fin with issues and pull requests in
 ## Support
 
 - Join a community of developers on [Discord](https://discord.gg/fjBugmvzZP)
-- Follow us on [Twitter](https://twitter.com/rowyio) and help [spread the word](https://twitter.com/intent/tweet?text=Came%20across%20this%20cute,%20tiny%20widget%20to%20collect%20feedback%20anywhere%20on%20your%20website.%0a%0aOpen-source,%20free,%20and%20fully%20customizable.%0a%0ahttp://www.feedbackfin.com/) 🙏
+- Follow us on [Twitter](https://twitter.com/rowyio) and help
+  [spread the word](https://twitter.com/intent/tweet?text=Came%20across%20this%20cute,%20tiny%20widget%20to%20collect%20feedback%20anywhere%20on%20your%20website.%0a%0aOpen-source,%20free,%20and%20fully%20customizable.%0a%0ahttp://www.feedbackfin.com/)
+  🙏
