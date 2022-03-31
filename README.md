@@ -49,7 +49,7 @@
 This is the URL to send the feedback to. The widget will make a POST request to this URL
 with the feedback data as a JSON body.
 
-You can generate a webhook URL endpoint and view the responses in a spreadsheet-UI using Rowy. [Learn how &nbsp;&UpperRightArrow;](https://feedbackfin.com/setup)
+Generate a webhook URL and view the feedback in a spreadsheet-UI using Rowy. [Learn how &nbsp;&UpperRightArrow;](https://feedbackfin.com/setup)
 
 ## Options
 
