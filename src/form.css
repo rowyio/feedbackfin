@@ -139,6 +139,11 @@
   padding: 0;
   cursor: pointer;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
   font-size: 1.25rem;
   color: inherit;
   opacity: var(--feedbackfin-icon-button-opacity);
