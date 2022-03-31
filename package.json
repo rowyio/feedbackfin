@@ -21,12 +21,18 @@
   "scripts": {
     "build": "node ./generate-form-html && microbundle --define process.env.NODE_ENV=production",
     "dev": "node ./generate-form-html && microbundle watch --define process.env.NODE_ENV=production",
-    "prepare": "node ./generate-form-html && microbundle --define process.env.NODE_ENV=production"
+    "prepare": "husky install && node ./generate-form-html && microbundle --define process.env.NODE_ENV=production"
   },
   "devDependencies": {
     "@floating-ui/dom": "^0.4.2",
     "focus-trap": "^6.7.3",
     "html-minifier": "^4.0.0",
-    "microbundle": "^0.14.2"
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
+    "microbundle": "^0.14.2",
+    "prettier": "^2.6.1"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }

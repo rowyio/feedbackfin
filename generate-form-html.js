@@ -7,5 +7,5 @@ writeFileSync(
   `export const formHTML = \`${minify(html, {
     collapseWhitespace: true,
     collapseInlineTagWhitespace: true,
-  })}\``
+  })}\`;\n`
 );
