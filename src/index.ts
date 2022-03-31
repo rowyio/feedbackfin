@@ -1,7 +1,7 @@
 import { computePosition, flip, shift } from "@floating-ui/dom";
 import { createFocusTrap } from "focus-trap";
 
-import { formHTML } from "./form.html";
+import { formHTML } from "./form-html";
 import formCSS from "./form.css";
 
 export type FeedbackFinConfig = {

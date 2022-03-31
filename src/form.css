@@ -1,6 +1,6 @@
 :root {
   --feedbackfin-bg-color: #fff;
-  --feedbackfin-text-color: 240, 50%, 10%;
+  --feedbackfin-text-color: 240, 100%, 10%;
   --feedbackfin-shadow: rgba(7, 0, 20, 0.06) 0px 0px 0px 1px,
     rgba(7, 0, 20, 0.1) 0px 10px 15px -3px, rgba(7, 0, 20, 0.05) 0px 4px 6px,
     rgba(7, 0, 20, 0.05) 0px 30px 40px;

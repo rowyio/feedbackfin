@@ -19,13 +19,14 @@
     "dist/**/*"
   ],
   "scripts": {
-    "build": "microbundle --define process.env.NODE_ENV=production",
-    "dev": "microbundle watch --define process.env.NODE_ENV=production",
-    "prepare": "microbundle --define process.env.NODE_ENV=production"
+    "build": "node ./generate-form-html && microbundle --define process.env.NODE_ENV=production",
+    "dev": "node ./generate-form-html && microbundle watch --define process.env.NODE_ENV=production",
+    "prepare": "node ./generate-form-html && microbundle --define process.env.NODE_ENV=production"
   },
   "devDependencies": {
     "@floating-ui/dom": "^0.4.2",
     "focus-trap": "^6.7.3",
+    "html-minifier": "^4.0.0",
     "microbundle": "^0.14.2"
   }
 }
