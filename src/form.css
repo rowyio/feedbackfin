@@ -186,6 +186,7 @@
   font-size: 1.25rem;
   font-weight: var(--feedbackfin-title-weight);
   text-align: center;
+  line-height: 1;
 }
 
 #feedbackfin__radio-group {
