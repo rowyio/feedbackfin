@@ -25,15 +25,16 @@
   <button data-feedbackfin-button>Feedback</button>
 
   <script src="./dist/index.umd.js"></script>
+  <script src="./dist/index.modern.js"></script>
   <script>
-    // import "./dist/index.modern.js";
-
     function toggleTheme() {
       document.body.setAttribute(
         "data-theme",
         document.body.getAttribute("data-theme") === "dark" ? "light" : "dark"
       );
     }
+
+    window.feedbackfin.config.lang = "fa";
 
     // document
     //   .querySelector("button")

@@ -1,7 +1,8 @@
 import { computePosition, flip, shift } from "@floating-ui/dom";
 import { createFocusTrap } from "focus-trap";
 
-import { formHTML, formHTMLFa } from "./form-html";
+import { formHTML } from "./form-html";
+import { formHTMLFa } from "./form-html-Fa";
 import formCSS from "./form.css";
 import formCSSFa from "./form-fa.css";
 
