@@ -74,6 +74,16 @@ window.feedbackfin.config.user = {
 };
 ```
 
+### `lang`
+
+default : "en" supported Languages : "en" , "fa"
+
+usage:
+
+```js
+window.feedbackfin.config.lang = "fa";
+```
+
 ### `disableErrorAlert`
 
 Optionally, disables displaying
