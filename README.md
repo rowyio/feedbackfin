@@ -25,8 +25,7 @@
    <script src="https://unpkg.com/feedbackfin@^1" defer></script>
    ```
 
-2. Configure with a [webhook URL](#setting-up-a-webhook-url) and optionally, add
-   [user info](#user):
+2. Setup a [webhook URL](#setting-up-a-webhook-url) (read instructions in the next section) and configure that in the script. Optionally, add any [user info](#user) that you want to pass in from the website:
 
    ```html
    <script>
@@ -46,8 +45,9 @@
 This is the URL to send the feedback to. The widget will make a POST request to
 this URL with the feedback data as a JSON body.
 
-Generate a webhook URL and view the feedback in a spreadsheet UI using Rowy.
-[Learn how &nbsp;&UpperRightArrow;](https://feedbackfin.com/setup)
+Generate a webhook URL easily using Rowy's low-code platform and manage feedback data on a collaborative spreadsheet-UI. Optionally, you can further automate on incoming feedback with Rowy's built-in code-editor (eg: notify on team slack/discord, email follow up etc).
+
+End-to-end video instructions on the [website&nbsp;&UpperRightArrow;](https://feedbackfin.com/setup)
 
 ## Options
 
