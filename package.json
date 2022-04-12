@@ -23,7 +23,7 @@
   "scripts": {
     "build": "node ./generate-form-html && microbundle --define process.env.NODE_ENV=production",
     "dev": "node ./generate-form-html && microbundle watch --define process.env.NODE_ENV=production",
-    "prepare": "husky install && node ./generate-form-html && microbundle --define process.env.NODE_ENV=production"
+    "prepare": "husky install && node ./generate-form-html && git add src/form-html.ts && microbundle --define process.env.NODE_ENV=production"
   },
   "devDependencies": {
     "@floating-ui/dom": "^0.4.2",
