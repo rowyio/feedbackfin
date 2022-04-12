@@ -13,7 +13,7 @@
     "require": "./dist/index.cjs",
     "default": "./dist/index.modern.js"
   },
-  "types": "./dist/src/src/index.d.ts",
+  "types": "./dist/src/index.d.ts",
   "main": "./dist/index.cjs",
   "module": "./dist/index.module.js",
   "unpkg": "./dist/index.umd.js",
