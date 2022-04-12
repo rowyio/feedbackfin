@@ -138,7 +138,7 @@ function submit(e: Event) {
   return false;
 }
 
-export const feedbackfin = { init, open, changeType, close, submit, config };
+const feedbackfin = { init, open, changeType, close, submit, config };
 (window as any).feedbackfin = feedbackfin;
 
 export default feedbackfin;
