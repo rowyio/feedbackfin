@@ -4,7 +4,9 @@
     "target": "ESNext",
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "declaration": true,
+    "declarationDir": "./dist"
   },
   "include": ["src", "types"]
 }

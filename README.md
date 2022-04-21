@@ -164,7 +164,8 @@ This widget is built using standard HTML form elements with the appropriate
 labels.
 
 Focus is trapped within the widget when it is open using
-[focus-trap](https://github.com/focus-trap/focus-trap).
+[focus-trap](https://github.com/focus-trap/focus-trap). Be careful when nesting
+this widget inside another element with a focus trap.
 
 ## Contributing
 
