@@ -2,17 +2,22 @@ import { computePosition, flip, shift } from "@floating-ui/dom";
 import { createFocusTrap } from "focus-trap";
 
 import { formHTML } from "./form-html";
+import { formHTMLFa } from "./form-html-Fa";
 import formCSS from "./form.css";
+import formCSSFa from "./form-fa.css";
 
 export type FeedbackFinConfig = {
   url: string;
   user: Record<any, any>;
   disableErrorAlert: boolean;
+  lang: string;
 };
+
 const config: FeedbackFinConfig = {
   url: "",
   user: {},
   disableErrorAlert: false,
+  lang: "en",
   // Spread user config when loaded
   ...(window as any).feedbackfin?.config,
 };
@@ -20,7 +25,7 @@ const config: FeedbackFinConfig = {
 function init() {
   const styleElement = document.createElement("style");
   styleElement.id = "feedbackfin__css";
-  styleElement.innerHTML = formCSS;
+  styleElement.innerHTML = config.lang === "fa" ? formCSSFa : formCSS;
 
   document.head.insertBefore(styleElement, document.head.firstChild);
 
@@ -40,7 +45,7 @@ const trap = createFocusTrap(containerElement, {
 
 function open(e: Event) {
   document.body.appendChild(containerElement);
-  containerElement.innerHTML = formHTML;
+  containerElement.innerHTML = config.lang === "fa" ? formHTMLFa : formHTML;
   containerElement.style.display = "block";
 
   const target = (e?.target as HTMLElement) || document.body;
@@ -86,14 +91,23 @@ function changeType(e: Event) {
   const value = (e.target as HTMLInputElement).value;
 
   containerElement.setAttribute("data-feedback-type", value);
+  if (config.lang === "en") {
+    let placeholder = "I think…";
+    if (value === "issue") placeholder = "I’m having an issue with…";
+    else if (value === "idea") placeholder = "I’d like to see…";
 
-  let placeholder = "I think…";
-  if (value === "issue") placeholder = "I’m having an issue with…";
-  else if (value === "idea") placeholder = "I’d like to see…";
+    document
+      .getElementById("feedbackfin__message")
+      ?.setAttribute("placeholder", placeholder);
+  } else if (config.lang === "fa") {
+    let placeholder = "من خواستم که…";
+    if (value === "issue") placeholder = " مشکلی دارم درباره …";
+    else if (value === "idea") placeholder = "بنظر من ...";
 
-  document
-    .getElementById("feedbackfin__message")
-    ?.setAttribute("placeholder", placeholder);
+    document
+      .getElementById("feedbackfin__message")
+      ?.setAttribute("placeholder", placeholder);
+  }
 }
 
 function submit(e: Event) {
