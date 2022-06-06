@@ -61,7 +61,8 @@ with the data as a JSON body. See
 
 ### `user`
 
-An object whose contents will be submitted as part of the form. Note:
+An object whose contents will be submitted as part of the form. 
+Note:
 `feedbackType`, `message`, and `timestamp` are reserved fields and will be
 overwritten by form values.
 
