@@ -2,17 +2,21 @@ import { computePosition, flip, shift } from "@floating-ui/dom";
 import { createFocusTrap } from "focus-trap";
 
 import { formHTML } from "./form-html";
+import { npsHTML } from "./nps-html";
 import formCSS from "./form.css";
+import npsCSS from "./nps.css";
 
 export type FeedbackFinConfig = {
   url: string;
   user: Record<any, any>;
   disableErrorAlert: boolean;
+  mode: string;
 };
 const config: FeedbackFinConfig = {
   url: "",
   user: {},
   disableErrorAlert: false,
+  mode: "nps",
   // Spread user config when loaded
   ...(window as any).feedbackfin?.config,
 };
@@ -20,7 +24,7 @@ const config: FeedbackFinConfig = {
 function init() {
   const styleElement = document.createElement("style");
   styleElement.id = "feedbackfin__css";
-  styleElement.innerHTML = formCSS;
+  styleElement.innerHTML = config.mode === "nps" ? npsCSS : formCSS;
 
   document.head.insertBefore(styleElement, document.head.firstChild);
 
@@ -40,7 +44,7 @@ const trap = createFocusTrap(containerElement, {
 
 function open(e: Event) {
   document.body.appendChild(containerElement);
-  containerElement.innerHTML = formHTML;
+  containerElement.innerHTML = config.mode === "nps" ? npsHTML : formHTML;
   containerElement.style.display = "block";
 
   const target = (e?.target as HTMLElement) || document.body;
@@ -70,6 +74,8 @@ function open(e: Event) {
   document
     .getElementById("feedbackfin__form")!
     .addEventListener("submit", submit);
+
+  document.getElementById("feedbackfin__back")!.addEventListener("click", back);
 }
 
 function close() {
@@ -90,10 +96,15 @@ function changeType(e: Event) {
   let placeholder = "I think…";
   if (value === "issue") placeholder = "I’m having an issue with…";
   else if (value === "idea") placeholder = "I’d like to see…";
+  else placeholder = "Anything else you'd like to share?";
 
   document
     .getElementById("feedbackfin__message")
     ?.setAttribute("placeholder", placeholder);
+}
+
+function back() {
+  containerElement.removeAttribute("data-feedback-type");
 }
 
 function submit(e: Event) {
