@@ -4,7 +4,7 @@
 
 <p>
     <a target="_blank" rel="noopener" href="http://www.feedbackfin.com"><b>Website</b></a> •
-    <a target="_blank" rel="noopener" href="https://discord.gg/fjBugmvzZP"><b>Discord</b></a> • 
+    <a target="_blank" rel="noopener" href="https://discord.gg/fjBugmvzZP"><b>Discord</b></a> •
     <a target="_blank" rel="noopener" href="https://twitter.com/rowyio"><b>Twitter</b></a>
 </p>
 
@@ -25,17 +25,21 @@
    <script src="https://unpkg.com/feedbackfin@^1" defer></script>
    ```
 
-2. Setup a [webhook URL](#setting-up-a-webhook-url) (read instructions in the next section) and configure that in the script. Optionally, add any [user info](#user) that you want to pass in from the website:
+2. Setup a [webhook URL](#setting-up-a-webhook-url) (read instructions in the
+   next section) and configure that in the script. Optionally, add any
+   [user info](#user) that you want to pass in from the website:
 
    ```html
    <script>
      window.feedbackfin = { config: {}, ...window.feedbackfin };
      window.feedbackfin.config.url = "https://rowy-hooks.run.app/wh/...";
      window.feedbackfin.config.user = { name: "...", email: "..." };
+     window.feedbackfin.config.mode = "form";
    </script>
    ```
 
 3. Set a button to open the widget:
+
    ```html
    <button data-feedbackfin-button>Feedback</button>
    ```
@@ -45,9 +49,13 @@
 This is the URL to send the feedback to. The widget will make a POST request to
 this URL with the feedback data as a JSON body.
 
-Generate a webhook URL easily using Rowy's low-code platform and manage feedback data on a collaborative spreadsheet-UI. Optionally, you can further automate on incoming feedback with Rowy's built-in code-editor (eg: notify on team slack/discord, email follow up etc).
+Generate a webhook URL easily using Rowy's low-code platform and manage feedback
+data on a collaborative spreadsheet-UI. Optionally, you can further automate on
+incoming feedback with Rowy's built-in code-editor (eg: notify on team
+slack/discord, email follow up etc).
 
-End-to-end video instructions on the [website&nbsp;&UpperRightArrow;](https://feedbackfin.com/setup)
+End-to-end video instructions on the
+[website&nbsp;&UpperRightArrow;](https://feedbackfin.com/setup)
 
 ## Options
 
@@ -73,6 +81,15 @@ window.feedbackfin.config.user = {
   email: "...",
 };
 ```
+
+### `mode`
+
+A string with options `nps` and `form` designating two different types of
+feedback. `nps` takes input from users in the form of a Net Promoter Score
+(NPS), with levels of user satisfaction ranging from Very Satisfied to Very
+Unsatisfied and a text field allowing users to input their thoughts. The `form`
+field is the original form created for Feedback Fin; user feedback is divided
+into categories of Issues, Ideas, and Other.
 
 ### `disableErrorAlert`
 

@@ -16,7 +16,7 @@ const config: FeedbackFinConfig = {
   url: "",
   user: {},
   disableErrorAlert: false,
-  mode: "nps",
+  mode: "form",
   // Spread user config when loaded
   ...(window as any).feedbackfin?.config,
 };
